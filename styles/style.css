@@ -1,0 +1,109 @@
+* {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 1rem;
+}
+
+body {
+   display: grid;
+   height: 100vh;
+   grid-template-rows: 100px 1fr 80px;
+   grid-template-columns: 100vw;
+}
+
+
+/* HEADER */
+.header {
+   display: flex;
+   justify-content: center;
+   height: 100%;
+   box-shadow: 1px 9px 9px black;
+   /* why this is not working? */
+}
+
+.title {
+   display: flex;
+   align-items: center;
+   font-size: 2rem;
+   padding: 30px;
+   width: 100%;
+}
+
+/* MAIN */
+.main {
+   background-color: #d6d6d6;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+/* MAIN FORM */
+#form {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   padding: 30px;
+   text-align: center;
+}
+
+#form>button {
+   border: none;
+   border-radius: 5px;
+   background-color: rgba(0, 128, 0, 0.500);
+   padding: 5px 20px;
+}
+
+#form>button:hover {
+   background-color: rgba(95, 168, 109, 0.800);
+}
+
+/* MAIN LIBRARY */
+.library {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+   gap: 20px;
+   width: 100%;
+   margin: 30px 0;
+   padding: 30px;
+}
+
+/* dinamicaly generated */
+.book_card {
+   background-color: aliceblue;
+   display: flex;
+   padding: 30px;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   border-radius: 10px;
+   gap: 10px;
+}
+
+.btn_container {
+   display: flex;
+   width: 100%;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.btn_container>button {
+   padding: 5px;
+}
+
+/* FOOTER */
+.footer {
+   width: 100%;
+   color: white;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #a9a9a9;
+}
+
+/* MEDIA QUERIES */
+@media (width > 1200px) {
+
+   .library,
+   .title {
+      max-width: 1200px;
+   }
+}
