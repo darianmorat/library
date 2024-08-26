@@ -6,10 +6,9 @@
 body {
    display: grid;
    height: 100vh;
-   grid-template-rows: 100px 1fr 80px;
+   grid-template-rows: 100px 1fr 70px;
    grid-template-columns: 100vw;
 }
-
 
 /* HEADER */
 .header {
@@ -17,7 +16,7 @@ body {
    justify-content: center;
    height: 100%;
    box-shadow: 1px 9px 9px black;
-   /* why this is not working? */
+   /* shadow not working */
 }
 
 .title {
@@ -36,13 +35,19 @@ body {
    align-items: center;
 }
 
-/* MAIN FORM */
 #form {
    display: flex;
    flex-direction: column;
    gap: 10px;
    padding: 30px;
    text-align: center;
+}
+
+#form>input {
+   border: 2px solid white;
+   border-radius: 5px;
+   height: 30px;
+   padding: 8px;
 }
 
 #form>button {
@@ -56,7 +61,10 @@ body {
    background-color: rgba(95, 168, 109, 0.800);
 }
 
-/* MAIN LIBRARY */
+.no_valid_form {
+   border: 2px solid red !important
+}
+
 .library {
    display: grid;
    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -66,7 +74,7 @@ body {
    padding: 30px;
 }
 
-/* dinamicaly generated */
+/* JS-Generated */
 .book_card {
    background-color: aliceblue;
    display: flex;

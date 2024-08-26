@@ -17,7 +17,10 @@ let myLibrary = [];
 
 // Add book
 addBtn.addEventListener("click", () => {
-   formValidation();
+   if (formValidation() === false) {
+      return;
+   }
+
    const newBook = new Book(Date.now(), title.value, author.value, pages.value, read.checked);
    myLibrary.push(newBook);
    addBookToLibrary(newBook);
@@ -29,6 +32,10 @@ function reset() {
    author.value = "";
    pages.value = "";
    read.checked = false;
+
+   title.placeholder = "Title";
+   author.placeholder = "Author";
+   pages.placeholder = "# Pages";
 }
 
 function addBookToLibrary(book) {
@@ -92,15 +99,37 @@ function removeBook(id) {
    myLibrary = myLibrary.filter((obj) => obj.id !== id);
 }
 
-// Form validation
-
-// title.value = "";
-// author.value = "";
-// pages.value = "";
-// read.checked = false;
-
 function formValidation() {
+   let isValid;
+
    if (title.value === "") {
-      console.log("A title is required");
+      title.placeholder = "Enter at least 1char";
+      title.classList.add("no_valid_form");
+      isValid = false;
+   } else {
+      title.classList.remove("no_valid_form");
    }
+
+   if (author.value === "") {
+      author.placeholder = "Enter at least 1char";
+      author.classList.add("no_valid_form");
+      isValid = false;
+   } else {
+      author.classList.remove("no_valid_form");
+   }
+
+   if (pages.value === "") {
+      pages.placeholder = "Enter a valid number";
+      pages.classList.add("no_valid_form");
+      isValid = false;
+   } else if (pages.value > 10000 || pages.value <= 1) {
+      pages.value = "";
+      pages.placeholder = "Range is 1 to 10000";
+      pages.classList.add("no_valid_form");
+      isValid = false;
+   } else {
+      pages.classList.remove("no_valid_form");
+   }
+
+   return isValid;
 }
