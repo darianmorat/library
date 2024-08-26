@@ -20,7 +20,8 @@
 
    <!-- MAIN -->
    <main class="main">
-      <section class="form">
+      <button class="show_modal">+ Add Book</button>
+      <dialog>
          <form id="form" action="">
             <input type="text" name="" id="title" placeholder="Title" maxlength="50"> <!-- add 'required' later -->
             <input type="text" name="" id="author" placeholder="Author" maxlength="50">
@@ -30,8 +31,11 @@
                <input type="checkbox" name="" id="read">
             </div>
             <button class="add_book" type="submit" form="myForm">Add Book</button>
+            <button class="close_modal" autofocus>Cancel</button>
          </form>
-      </section>
+      </dialog>
+
+      <!-- LIBRARY -->
       <section class="library"></section>
    </main>
 

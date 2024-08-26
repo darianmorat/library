@@ -29,10 +29,35 @@ body {
 
 /* MAIN */
 .main {
-   background-color: #d6d6d6;
+   background-color: #ededed;
    display: flex;
    flex-direction: column;
    align-items: center;
+}
+
+.show_modal {
+   border: none;
+   border-radius: 5px;
+   padding: 10px 20px;
+   margin: 40px;
+   background-color: rgba(95, 168, 109);
+   color: white;
+}
+
+.show_modal:hover {
+   background-color: rgba(95, 168, 109, 0.800);
+}
+
+dialog {
+   margin: auto;
+   border: none;
+   border-radius: 8px;
+   box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.100);
+   background-color: #eaeaea;
+}
+
+dialog::backdrop {
+   background-color: rgba(0, 0, 0, 0.4);
 }
 
 #form {
@@ -53,18 +78,32 @@ body {
 #form>button {
    border: none;
    border-radius: 5px;
-   background-color: rgba(0, 128, 0, 0.500);
    padding: 5px 20px;
 }
 
-#form>button:hover {
+.add_book {
+   background-color: rgba(95, 168, 109);
+   color: white;
+}
+
+.add_book:hover {
    background-color: rgba(95, 168, 109, 0.800);
+}
+
+.close_modal {
+   background-color: rgba(236, 81, 81);
+   color: white;
+}
+
+.close_modal:hover {
+   background-color: rgba(236, 81, 81, 0.800);
 }
 
 .no_valid_form {
    border: 2px solid red !important
 }
 
+/* LIBRARY */
 .library {
    display: grid;
    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -76,13 +115,13 @@ body {
 
 /* JS-Generated */
 .book_card {
-   background-color: aliceblue;
+   background-color: rgb(255, 255, 255);
    display: flex;
    padding: 30px;
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   border-radius: 10px;
+   border-radius: 8px;
    gap: 10px;
 }
 
@@ -94,17 +133,22 @@ body {
 }
 
 .btn_container>button {
-   padding: 5px;
+   padding: 8px;
+   border-radius: 5px;
+   border: none;
+}
+
+.remove_btn{
+   background-color: rgb(236, 112, 112);
+   color: white;
 }
 
 /* FOOTER */
 .footer {
    width: 100%;
-   color: white;
    display: flex;
    align-items: center;
    justify-content: center;
-   background-color: #a9a9a9;
 }
 
 /* MEDIA QUERIES */

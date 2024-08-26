@@ -13,9 +13,30 @@ const author = document.querySelector("#author");
 const pages = document.querySelector("#pages");
 const read = document.querySelector("#read");
 const addBtn = document.querySelector(".add_book");
-let myLibrary = [];
+const dialog = document.querySelector("dialog");
+const showModal = document.querySelector(".show_modal");
+const closeModal = document.querySelector("dialog .close_modal");
 
-// Add book
+let myLibrary = [
+   {
+      title: "Example Book Title",
+      author: "Darian Toledo",
+      pages: 221,
+      read: true,
+   },
+];
+
+// DIALOG
+showModal.addEventListener("click", () => {
+   dialog.showModal();
+});
+
+closeModal.addEventListener("click", () => {
+   dialog.close();
+});
+
+// ADD BOOK
+
 addBtn.addEventListener("click", () => {
    if (formValidation() === false) {
       return;
@@ -24,6 +45,7 @@ addBtn.addEventListener("click", () => {
    const newBook = new Book(Date.now(), title.value, author.value, pages.value, read.checked);
    myLibrary.push(newBook);
    addBookToLibrary(newBook);
+   dialog.close();
    reset();
 });
 
@@ -79,7 +101,8 @@ function createBookCard(book) {
       if (book.read) {
          readBtn.style.backgroundColor = "rgba(0, 128, 0, 0.500)";
       } else {
-         readBtn.style.backgroundColor = "rgba(255, 0, 0, 0.500)";
+         readBtn.style.backgroundColor = "rgba(236, 112, 112)";
+         
       }
    });
 
@@ -133,3 +156,5 @@ function formValidation() {
 
    return isValid;
 }
+
+myLibrary.forEach((obj) => addBookToLibrary(obj));
