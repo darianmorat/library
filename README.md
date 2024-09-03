@@ -1,4 +1,4 @@
-# Library-App
+# Library
 
 Library created with HTML, CSS and JS.
 
