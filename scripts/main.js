@@ -42,7 +42,14 @@ addBtn.addEventListener("click", () => {
       return;
    }
 
-   const newBook = new Book(Date.now(), title.value, author.value, pages.value, read.checked);
+   const newBook = new Book(
+      Date.now(),
+      title.value,
+      author.value,
+      pages.value,
+      read.checked
+   );
+
    myLibrary.push(newBook);
    addBookToLibrary(newBook);
    dialog.close();
@@ -102,7 +109,6 @@ function createBookCard(book) {
          readBtn.style.backgroundColor = "rgba(0, 128, 0, 0.500)";
       } else {
          readBtn.style.backgroundColor = "rgba(236, 112, 112)";
-         
       }
    });
 

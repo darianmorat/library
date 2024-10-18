@@ -16,7 +16,7 @@ body {
    justify-content: center;
    height: 100%;
    box-shadow: 1px 9px 9px black;
-   /* shadow not working */
+   /* shadow not working due to body template rows */
 }
 
 .title {
